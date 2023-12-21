@@ -6,6 +6,12 @@ export default function Form() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+    setName(data.name);
+    setEmail(data.email);
+    event.target.reset();
   }
 
   return (
